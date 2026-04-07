@@ -243,6 +243,8 @@ export default defineConfig(async ({ command }) => {
 
         output: {
           entryFileNames: (chunkInfo: { name: string }) => `${chunkInfo.name}.js`,
+          chunkFileNames: 'assets/chunks/[name]-[hash].js',
+          assetFileNames: 'assets/[name]-[hash][extname]',
           format: isIifeBuild ? 'iife' : 'es',
           name: 'UserComponent',
 
