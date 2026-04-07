@@ -90,6 +90,114 @@ console.log('\n开始为 dist 目录生成 HTML 文件...\n');
 generateHtmlForDirectory(distDir);
 
 console.log(`\n完成！共生成 ${generatedCount} 个 HTML 文件。`);
+
+// 生成导航首页 index.html
+const indexPath = path.join(distDir, 'index.html');
+const allHtmlFiles = [];
+
+function collectHtmlFiles(dir, baseDir = distDir) {
+  const items = fs.readdirSync(dir, { withFileTypes: true });
+  for (const item of items) {
+    const itemPath = path.join(dir, item.name);
+    if (item.isDirectory()) {
+      collectHtmlFiles(itemPath, baseDir);
+    } else if (item.name.endsWith('.html')) {
+      const relativePath = path.relative(baseDir, itemPath).replace(/\\/g, '/');
+      allHtmlFiles.push(relativePath);
+    }
+  }
+}
+
+collectHtmlFiles(distDir);
+allHtmlFiles.sort();
+
+// 按目录分组
+const groupedFiles = {};
+for (const file of allHtmlFiles) {
+  const parts = file.split('/');
+  if (parts.length > 1) {
+    const group = parts[0];
+    if (!groupedFiles[group]) groupedFiles[group] = [];
+    groupedFiles[group].push(file);
+  }
+}
+
+// 生成 index.html
+const indexHtml = `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>演员管理原型 - 导航</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    h1 {
+      color: white;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    .section {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .section h2 {
+      color: #333;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #667eea;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    a {
+      display: block;
+      padding: 12px 16px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #333;
+      transition: all 0.2s;
+    }
+    a:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎭 演员管理原型</h1>
+    ${Object.entries(groupedFiles).map(([group, files]) => `
+    <div class="section">
+      <h2>${group === 'prototypes' ? '📱 页面原型' : group === 'components' ? '🧩 组件' : group === 'themes' ? '🎨 主题' : group}</h2>
+      <div class="grid">
+        ${files.map(file => {
+          const name = file.replace(/\.html$/, '').replace(/^[^\/]+\//, '');
+          return `<a href="./${file}">${name}</a>`;
+        }).join('\n        ')}
+      </div>
+    </div>`).join('\n    ')}
+  </div>
+</body>
+</html>`;
+
+fs.writeFileSync(indexPath, indexHtml, 'utf8');
+console.log('✓ 已生成导航首页: index.html');
 console.log('模板文件: admin/html-template.html\n');
 
 // 复制 bootstrap JS 到 dist/assets
