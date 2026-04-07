@@ -1,0 +1,910 @@
+/**
+ * 中国演艺人才管理与服务平台 - 登录/注册中心样式
+ * 设计风格：文化艺术行业政务平台 · 左右分栏品牌登录页
+ * 品牌色：朱红 + 暖金色调
+ */
+
+/* ===== 全局变量 ===== */
+:root {
+    --brand-primary: #B8292F;
+    --brand-primary-hover: #9E2328;
+    --brand-primary-light: #FFF2F0;
+    --brand-primary-bg: rgba(184, 41, 47, 0.06);
+    --brand-gold: #C5963A;
+    --brand-gold-light: #FBF5EB;
+    --content-bg: #FBF9F7;
+    --card-bg: #FFFFFF;
+    --card-border: #F0ECE8;
+    --card-radius: 16px;
+    --text-primary: #2C2C2C;
+    --text-secondary: #666666;
+    --text-tertiary: #999999;
+    --text-quaternary: #BFBFBF;
+    --input-height: 44px;
+    --btn-height: 48px;
+    --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.06);
+    --hero-gradient: linear-gradient(135deg, #B8292F 0%, #D4553A 40%, #C5963A 100%);
+}
+
+/* ===== 全局布局 ===== */
+.yanyuan-login-page {
+    min-height: 100vh;
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
+        'Microsoft YaHei UI', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    background: var(--content-bg);
+}
+
+/* ===== 左侧品牌区 ===== */
+.yy-login-brand {
+    flex: 0 0 55%;
+    background: var(--hero-gradient);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px;
+}
+
+/* 文化纹样装饰 */
+.yy-login-brand::before {
+    content: '';
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    width: 500px;
+    height: 500px;
+    background: url("data:image/svg+xml,%3Csvg width='500' height='500' viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='250' cy='250' r='200' fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='1'/%3E%3Ccircle cx='250' cy='250' r='160' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3Ccircle cx='250' cy='250' r='120' fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='1'/%3E%3Ccircle cx='250' cy='250' r='80' fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1'/%3E%3Ccircle cx='250' cy='250' r='40' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E") no-repeat center;
+    opacity: 0.9;
+}
+
+.yy-login-brand::after {
+    content: '';
+    position: absolute;
+    left: -80px;
+    bottom: -80px;
+    width: 400px;
+    height: 400px;
+    background: url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='200' cy='200' r='160' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3Ccircle cx='200' cy='200' r='120' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3Ccircle cx='200' cy='200' r='80' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3C/svg%3E") no-repeat center;
+    opacity: 0.8;
+}
+
+.yy-login-brand-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 440px;
+}
+
+.yy-login-brand-logo {
+    width: 72px;
+    height: 72px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.yy-login-brand-title {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.yy-login-brand-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    font-weight: 500;
+}
+
+.yy-login-brand-desc {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 48px;
+}
+
+.yy-login-brand-slogan {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* 底部装饰线条 */
+.yy-login-brand-bottom-line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(197, 150, 58, 0.4), rgba(255, 255, 255, 0.05));
+}
+
+/* 特色亮点卡片 */
+.yy-login-features {
+    display: flex;
+    gap: 20px;
+    margin-top: 48px;
+}
+
+.yy-login-feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.yy-login-feature-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.yy-login-feature-text {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ===== 右侧表单区 ===== */
+.yy-login-form-area {
+    flex: 0 0 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    position: relative;
+    background: var(--content-bg);
+}
+
+.yy-login-form-wrapper {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* ===== 表单卡片 ===== */
+.yy-login-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--card-radius);
+    padding: 40px 36px;
+    box-shadow: var(--shadow-card);
+}
+
+.yy-login-card-header {
+    margin-bottom: 32px;
+}
+
+.yy-login-card-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.yy-login-card-desc {
+    font-size: 14px;
+    color: var(--text-tertiary);
+    line-height: 1.5;
+}
+
+/* ===== Tab 切换 ===== */
+.yy-login-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #F0ECE8;
+    position: relative;
+}
+
+.yy-login-tab {
+    flex: 1;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 15px;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-weight: 400;
+    position: relative;
+    border: none;
+    background: none;
+}
+
+.yy-login-tab:hover {
+    color: var(--brand-primary);
+}
+
+.yy-login-tab.active {
+    color: var(--brand-primary);
+    font-weight: 600;
+}
+
+.yy-login-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: var(--brand-primary);
+    border-radius: 3px;
+}
+
+/* ===== 表单控件 ===== */
+.yy-form-group {
+    margin-bottom: 20px;
+}
+
+.yy-form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+}
+
+.yy-form-label .required {
+    color: var(--brand-primary);
+    margin-left: 2px;
+}
+
+.yy-form-input-wrap {
+    position: relative;
+}
+
+.yy-form-input {
+    width: 100%;
+    height: var(--input-height);
+    padding: 0 16px;
+    border: 1px solid #E8E2DC;
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--text-primary);
+    background: #fff;
+    transition: all 0.2s ease;
+    outline: none;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.yy-form-input::placeholder {
+    color: var(--text-quaternary);
+}
+
+.yy-form-input:hover {
+    border-color: var(--brand-primary);
+}
+
+.yy-form-input:focus {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(184, 41, 47, 0.08);
+}
+
+.yy-form-input.error {
+    border-color: #E8684A;
+    box-shadow: 0 0 0 3px rgba(232, 104, 74, 0.08);
+}
+
+.yy-form-error {
+    font-size: 12px;
+    color: #E8684A;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* 验证码输入行 */
+.yy-form-code-row {
+    display: flex;
+    gap: 12px;
+}
+
+.yy-form-code-row .yy-form-input {
+    flex: 1;
+}
+
+.yy-form-code-btn {
+    flex-shrink: 0;
+    height: var(--input-height);
+    padding: 0 18px;
+    border: 1px solid var(--brand-primary);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--brand-primary);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    font-family: inherit;
+}
+
+.yy-form-code-btn:hover {
+    background: var(--brand-primary-light);
+}
+
+.yy-form-code-btn.disabled {
+    border-color: #E8E2DC;
+    color: var(--text-quaternary);
+    cursor: not-allowed;
+    background: #FAFAFA;
+}
+
+/* 主按钮 */
+.yy-form-submit-btn {
+    width: 100%;
+    height: var(--btn-height);
+    border: none;
+    border-radius: 10px;
+    background: var(--hero-gradient);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    margin-top: 8px;
+    position: relative;
+    overflow: hidden;
+    font-family: inherit;
+}
+
+.yy-form-submit-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease;
+}
+
+.yy-form-submit-btn:hover::before {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.yy-form-submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* 次按钮 */
+.yy-form-secondary-btn {
+    width: 100%;
+    height: var(--btn-height);
+    border: 1px solid #E8E2DC;
+    border-radius: 10px;
+    background: #fff;
+    color: var(--text-secondary);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.yy-form-secondary-btn:hover {
+    border-color: var(--brand-primary);
+    color: var(--brand-primary);
+    background: var(--brand-primary-light);
+}
+
+/* ===== 表单底部链接 ===== */
+.yy-form-footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    color: var(--text-tertiary);
+}
+
+.yy-form-link {
+    color: var(--brand-primary);
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.2s;
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0;
+}
+
+.yy-form-link:hover {
+    color: var(--brand-primary-hover);
+    text-decoration: underline;
+}
+
+/* ===== 扫码登录 ===== */
+.yy-qr-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 0 8px;
+}
+
+.yy-qr-code {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #F0ECE8;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 模拟二维码点阵 */
+.yy-qr-pattern {
+    width: 160px;
+    height: 160px;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    gap: 1px;
+}
+
+.yy-qr-dot {
+    border-radius: 1px;
+}
+
+.yy-qr-dot.filled {
+    background: var(--text-primary);
+}
+
+.yy-qr-dot.empty {
+    background: transparent;
+}
+
+.yy-qr-center-logo {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: var(--hero-gradient);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.yy-qr-status {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.yy-qr-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #6BAF5E;
+    animation: qr-pulse 1.5s infinite;
+}
+
+@keyframes qr-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+.yy-qr-hint {
+    font-size: 12px;
+    color: var(--text-quaternary);
+}
+
+.yy-qr-refresh {
+    margin-top: 16px;
+    border: none;
+    background: none;
+    color: var(--brand-primary);
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+    font-family: inherit;
+    transition: color 0.2s;
+}
+
+.yy-qr-refresh:hover {
+    color: var(--brand-primary-hover);
+}
+
+/* ===== 注册步骤条 ===== */
+.yy-steps {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    padding: 0 8px;
+}
+
+.yy-step-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    position: relative;
+}
+
+.yy-step-item:not(:last-child)::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: #E8E2DC;
+    margin: 0 12px;
+    border-radius: 1px;
+    transition: background 0.3s;
+}
+
+.yy-step-item.done:not(:last-child)::after {
+    background: var(--brand-primary);
+}
+
+.yy-step-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    border: 2px solid #E8E2DC;
+    color: var(--text-quaternary);
+    background: #fff;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.yy-step-item.active .yy-step-number {
+    border-color: var(--brand-primary);
+    background: var(--brand-primary);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(184, 41, 47, 0.25);
+}
+
+.yy-step-item.done .yy-step-number {
+    border-color: var(--brand-primary);
+    background: var(--brand-primary);
+    color: #fff;
+}
+
+.yy-step-label {
+    font-size: 13px;
+    color: var(--text-quaternary);
+    font-weight: 400;
+    white-space: nowrap;
+    transition: color 0.3s;
+}
+
+.yy-step-item.active .yy-step-label {
+    color: var(--brand-primary);
+    font-weight: 600;
+}
+
+.yy-step-item.done .yy-step-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* ===== 密码强度指示 ===== */
+.yy-password-strength {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+    align-items: center;
+}
+
+.yy-password-bar {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    background: #E8E2DC;
+    transition: background 0.3s;
+}
+
+.yy-password-bar.weak {
+    background: #E8684A;
+}
+
+.yy-password-bar.medium {
+    background: #E8A735;
+}
+
+.yy-password-bar.strong {
+    background: #6BAF5E;
+}
+
+.yy-password-text {
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 8px;
+    white-space: nowrap;
+}
+
+.yy-password-text.weak {
+    color: #E8684A;
+}
+
+.yy-password-text.medium {
+    color: #E8A735;
+}
+
+.yy-password-text.strong {
+    color: #6BAF5E;
+}
+
+/* ===== 身份证上传区 ===== */
+.yy-upload-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.yy-upload-item {
+    border: 2px dashed #E8E2DC;
+    border-radius: 12px;
+    padding: 20px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #FDFCFB;
+    min-height: 100px;
+}
+
+.yy-upload-item:hover {
+    border-color: var(--brand-primary);
+    background: var(--brand-primary-light);
+}
+
+.yy-upload-icon {
+    color: var(--text-quaternary);
+    transition: color 0.2s;
+}
+
+.yy-upload-item:hover .yy-upload-icon {
+    color: var(--brand-primary);
+}
+
+.yy-upload-text {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* ===== 用户类型选择 ===== */
+.yy-type-select {
+    display: flex;
+    gap: 12px;
+}
+
+.yy-type-option {
+    flex: 1;
+    padding: 16px;
+    border: 2px solid #E8E2DC;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    background: #fff;
+}
+
+.yy-type-option:hover {
+    border-color: var(--brand-primary);
+}
+
+.yy-type-option.selected {
+    border-color: var(--brand-primary);
+    background: var(--brand-primary-light);
+}
+
+.yy-type-option-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    color: var(--text-tertiary);
+    transition: all 0.2s;
+}
+
+.yy-type-option.selected .yy-type-option-icon {
+    color: var(--brand-primary);
+}
+
+.yy-type-option-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+.yy-type-option.selected .yy-type-option-label {
+    color: var(--brand-primary);
+}
+
+.yy-type-option-desc {
+    font-size: 12px;
+    color: var(--text-quaternary);
+}
+
+/* ===== 按钮行 ===== */
+.yy-btn-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.yy-btn-row .yy-form-submit-btn,
+.yy-btn-row .yy-form-secondary-btn {
+    flex: 1;
+}
+
+/* ===== 勾选框 ===== */
+.yy-checkbox-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    margin-top: -4px;
+}
+
+.yy-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-tertiary);
+    cursor: pointer;
+}
+
+.yy-checkbox {
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid #D9D4CE;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    background: #fff;
+    flex-shrink: 0;
+}
+
+.yy-checkbox.checked {
+    background: var(--brand-primary);
+    border-color: var(--brand-primary);
+}
+
+/* ===== 页面底部版权 ===== */
+.yy-login-copyright {
+    margin-top: 32px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-quaternary);
+    line-height: 1.8;
+}
+
+/* ===== 协议文字 ===== */
+.yy-agreement {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-quaternary);
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.yy-agreement-link {
+    color: var(--brand-primary);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.yy-agreement-link:hover {
+    text-decoration: underline;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 1199px) {
+    .yy-login-brand {
+        flex: 0 0 45%;
+        padding: 40px;
+    }
+
+    .yy-login-form-area {
+        flex: 0 0 55%;
+    }
+
+    .yy-login-brand-title {
+        font-size: 24px;
+    }
+
+    .yy-login-features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .yy-login-feature-item {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 768px) {
+    .yanyuan-login-page {
+        flex-direction: column;
+    }
+
+    .yy-login-brand {
+        display: none;
+    }
+
+    .yy-login-form-area {
+        flex: 1;
+        padding: 24px 20px;
+    }
+
+    .yy-login-card {
+        padding: 28px 24px;
+    }
+
+    .yy-upload-group {
+        grid-template-columns: 1fr;
+    }
+
+    .yy-type-select {
+        flex-direction: column;
+    }
+}

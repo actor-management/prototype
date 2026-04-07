@@ -1,0 +1,249 @@
+/**
+ * @name ÊºîËâ∫‰∫∫ÊâçÂπ≥Âè∞ - Áº¥Ë¥π‰∏≠ÂøÉÊ†∑Âºè
+ */
+/* Google Fonts “—“∆≥˝£∫ π”√œµÕ≥‘§◊∞µƒ Noto Sans SC£¨±‹√‚‘∂≥Ãº”‘ÿ◊Ë»˚‰÷»æ */
+
+.yanyuan-pay-container {
+    background-color: #F5F5F7;
+    color: #1A1A2E;
+    height: 100vh;
+    max-height: 100dvh;
+    min-height: 100vh;
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+    overflow: hidden;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.yanyuan-pay-scroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.yanyuan-pay-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.yanyuan-pay-nav {
+    background: #fff;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #F0F0F0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.yanyuan-pay-nav-back {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: -6px;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.yanyuan-pay-nav-back:active {
+    background: #F0F0F0;
+}
+
+.yanyuan-pay-nav-title {
+    font-size: 17px;
+    font-weight: 600;
+    flex: 1;
+}
+
+.yanyuan-pay-tabs {
+    display: flex;
+    margin: 16px 20px 0;
+    background: #EAEAEE;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.yanyuan-pay-tab {
+    flex: 1;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #8E8E93;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.yanyuan-pay-tab.active {
+    background: #fff;
+    color: #1A1A2E;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.yanyuan-pay-list {
+    padding: 16px 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.yanyuan-pay-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.yanyuan-pay-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.yanyuan-pay-card-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1A1A2E;
+    flex: 1;
+}
+
+.yanyuan-pay-card-tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.yanyuan-pay-card-tag.cert {
+    background: #FFF3E0;
+    color: #E65100;
+}
+
+.yanyuan-pay-card-tag.train {
+    background: #E8F5E9;
+    color: #2E7D32;
+}
+
+.yanyuan-pay-card-tag.exam {
+    background: #E3F2FD;
+    color: #1565C0;
+}
+
+.yanyuan-pay-card-tag.renew {
+    background: #FBE9E7;
+    color: #D84315;
+}
+
+.yanyuan-pay-card-amount {
+    font-size: 24px;
+    font-weight: 700;
+    color: #E85D4A;
+    margin-bottom: 8px;
+}
+
+.yanyuan-pay-card-amount .unit {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.yanyuan-pay-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 12px;
+}
+
+.yanyuan-pay-card-info-row {
+    font-size: 13px;
+    color: #8E8E93;
+}
+
+.yanyuan-pay-card-countdown {
+    font-size: 12px;
+    color: #E53935;
+    background: #FFEBEE;
+    padding: 6px 10px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.yanyuan-pay-card-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.yanyuan-pay-card-btn {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 16px;
+    border-radius: 18px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    min-height: 34px;
+    transition: opacity 0.15s;
+}
+
+.yanyuan-pay-card-btn:active {
+    opacity: 0.8;
+}
+
+.yanyuan-pay-card-btn.pay {
+    background: linear-gradient(135deg, #E85D4A, #D94848);
+    color: #fff;
+}
+
+.yanyuan-pay-card-btn.detail {
+    background: #F5F5F5;
+    color: #666;
+}
+
+.yanyuan-pay-card-btn.cancel {
+    background: transparent;
+    color: #8E8E93;
+    border: 1px solid #E0E0E0;
+}
+
+.yanyuan-pay-card-btn.invoice {
+    background: #F5F5F5;
+    color: #666;
+}
+
+/* Â∑≤ÊîØ‰ªòÁä∂ÊÄ?*/
+.yanyuan-pay-card-status {
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.yanyuan-pay-card-status.paid {
+    color: #2E7D32;
+}
+
+.yanyuan-pay-card-status.refunded {
+    color: #E65100;
+}

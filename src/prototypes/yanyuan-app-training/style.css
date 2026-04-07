@@ -1,0 +1,672 @@
+/**
+ * @name 演艺人才平台 - 学习首页样式
+ */
+/* Google Fonts ���Ƴ���ʹ��ϵͳԤװ�� Noto Sans SC������Զ�̼���������Ⱦ */
+
+.yanyuan-train-container {
+    background-color: #F5F5F7;
+    color: #1A1A2E;
+    height: 100vh;
+    max-height: 100dvh;
+    min-height: 100vh;
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+    overflow: hidden;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.yanyuan-train-scroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.yanyuan-train-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.yanyuan-train-header {
+    background: #fff;
+    padding: 16px 20px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    border-bottom: 1px solid #F0F0F0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* 学习进度�?*/
+.yanyuan-train-progress-card {
+    margin: 20px;
+    background: linear-gradient(135deg, #E85D4A 0%, #D94848 100%);
+    border-radius: 16px;
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.yanyuan-train-progress-card::after {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+}
+
+.yanyuan-train-ring-wrap {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+}
+
+.yanyuan-train-ring-wrap svg {
+    transform: rotate(-90deg);
+    width: 72px;
+    height: 72px;
+}
+
+.yanyuan-train-ring-wrap circle {
+    fill: none;
+    stroke-width: 7;
+    stroke-linecap: round;
+}
+
+.yanyuan-train-ring-bg {
+    stroke: rgba(255, 255, 255, 0.2);
+}
+
+.yanyuan-train-ring-bar {
+    stroke: #fff;
+    transition: stroke-dashoffset 0.6s ease;
+}
+
+.yanyuan-train-ring-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.yanyuan-train-progress-info {
+    flex: 1;
+    z-index: 1;
+}
+
+.yanyuan-train-progress-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.yanyuan-train-progress-sub {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* Tab切换 */
+.yanyuan-train-tabs {
+    display: flex;
+    margin: 0 20px;
+    gap: 0;
+    background: #EAEAEE;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.yanyuan-train-tab {
+    flex: 1;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #8E8E93;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.yanyuan-train-tab.active {
+    background: #fff;
+    color: #1A1A2E;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* 搜索与工具栏 */
+.yanyuan-train-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 20px 0;
+}
+
+.yanyuan-train-search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #EAEAEE;
+    border-radius: 20px;
+    padding: 8px 14px;
+    color: #8E8E93;
+}
+
+.yanyuan-train-search input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+    color: #1A1A2E;
+    width: 100%;
+}
+
+.yanyuan-train-search input::placeholder {
+    color: #AEAEB2;
+}
+
+.yanyuan-train-filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #1A1A2E;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* 分类滚动列表（二级菜单） */
+.yanyuan-train-category-scroll {
+    margin-top: 16px;
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.yanyuan-train-category-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.yanyuan-train-category-wrapper {
+    display: flex;
+    gap: 10px;
+    padding: 0 20px;
+    width: max-content;
+}
+
+.yanyuan-train-category-pill {
+    padding: 6px 14px;
+    border-radius: 16px;
+    background: #fff;
+    font-size: 13px;
+    color: #666;
+    cursor: pointer;
+    border: 1px solid #EAEAEA;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.yanyuan-train-category-pill.active {
+    background: #FBE9E7;
+    color: #D84315;
+    border-color: #FBE9E7;
+    font-weight: 500;
+}
+
+/* 课程列表 */
+.yanyuan-train-list {
+    padding: 16px 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.yanyuan-train-course {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.12s;
+    min-height: 44px;
+}
+
+.yanyuan-train-course:active {
+    transform: scale(0.985);
+}
+
+.yanyuan-train-course-thumb {
+    width: 110px;
+    min-height: 90px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #eee;
+}
+
+.yanyuan-train-course-info {
+    flex: 1;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.yanyuan-train-course-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1A1A2E;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.yanyuan-train-course-tags {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.yanyuan-train-course-tag {
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: #F5F5F5;
+    color: #666;
+}
+
+.yanyuan-train-course-tag.required {
+    background: #FBE9E7;
+    color: #D84315;
+}
+
+/* 进度�?*/
+.yanyuan-train-course-bar-wrap {
+    height: 4px;
+    background: #F0F0F0;
+    border-radius: 2px;
+    margin-bottom: 6px;
+    overflow: hidden;
+}
+
+.yanyuan-train-course-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #E85D4A 0%, #F0C060 100%);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+.yanyuan-train-course-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.yanyuan-train-course-progress {
+    font-size: 12px;
+    color: #8E8E93;
+}
+
+.yanyuan-train-course-btn {
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    border-radius: 12px;
+    padding: 4px 12px;
+    cursor: pointer;
+    font-family: inherit;
+    min-height: 28px;
+    transition: opacity 0.15s;
+}
+
+.yanyuan-train-course-btn.continue {
+    background: #E85D4A;
+    color: #fff;
+}
+
+.yanyuan-train-course-btn.enroll {
+    background: #FBE9E7;
+    color: #D84315;
+}
+
+.yanyuan-train-course-btn:active {
+    opacity: 0.8;
+}
+
+/* 空状�?*/
+.yanyuan-train-empty {
+    text-align: center;
+    padding: 48px 20px;
+    color: #AEAEB2;
+}
+
+.yanyuan-train-empty-icon {
+    font-size: 48px;
+    margin-bottom: 8px;
+    opacity: 0.4;
+}
+
+.yanyuan-train-empty-text {
+    font-size: 14px;
+}
+
+/* 底部Tab */
+.yanyuan-train-tab-bar {
+    position: relative;
+    background: #fff;
+    padding: 6px 0 calc(6px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #EAEAEA;
+    z-index: 30;
+    flex-shrink: 0;
+    box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.04);
+}
+
+.yanyuan-train-tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    color: #8E8E93;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 4px 12px;
+    min-height: 44px;
+    min-width: 44px;
+    position: relative;
+}
+
+.yanyuan-train-tab-item.active {
+    color: #E85D4A;
+}
+
+.yanyuan-train-tab-item.active::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #E85D4A 0%, #F0C060 100%);
+}
+
+.yanyuan-train-tab-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.yanyuan-train-tab-label {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+@keyframes yanyuan-train-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.yanyuan-train-progress-card {
+    animation: yanyuan-train-fade-up 0.25s ease-out both;
+}
+
+.yanyuan-train-list {
+    animation: yanyuan-train-fade-up 0.25s ease-out 0.05s both;
+}
+
+/* ===== Admin 统计�?===== */
+.yanyuan-train-admin-stats {
+    display: flex;
+    gap: 10px;
+    padding: 16px 20px 0;
+}
+
+.yanyuan-train-admin-stat-card {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 10px;
+    text-align: center;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.yanyuan-train-admin-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #2196F3, #4FC3F7);
+}
+
+.yanyuan-train-admin-stat-card.pending::before {
+    background: linear-gradient(90deg, #F44336, #FF8A65);
+}
+
+.yanyuan-train-admin-stat-card .stat-num {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1A1A2E;
+    margin-bottom: 4px;
+}
+
+.yanyuan-train-admin-stat-card.pending .stat-num {
+    color: #F44336;
+}
+
+.yanyuan-train-admin-stat-card .stat-label {
+    font-size: 11px;
+    color: #8E8E93;
+    font-weight: 500;
+}
+
+/* ===== Admin 管理网格 ===== */
+.yanyuan-train-section-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px 20px 12px;
+    color: #1A1A2E;
+}
+
+.yanyuan-train-admin-grid {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 16px;
+    gap: 12px;
+}
+
+.admin-grid-item {
+    width: calc(50% - 6px);
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.12s;
+    position: relative;
+}
+
+.admin-grid-item:active {
+    transform: scale(0.98);
+    background: #FAFAFA;
+}
+
+.admin-grid-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-grid-icon.blue {
+    background: #E3F2FD;
+    color: #1565C0;
+}
+
+.admin-grid-icon.purple {
+    background: #F3E5F5;
+    color: #7B1FA2;
+}
+
+.admin-grid-icon.red {
+    background: #FFEBEE;
+    color: #C62828;
+}
+
+.admin-grid-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1A1A2E;
+}
+
+.admin-grid-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #F44336;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+/* ===== Admin 待办列表 ===== */
+.yanyuan-train-notices {
+    background: #fff;
+    margin: 0 20px 20px;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+}
+
+.yanyuan-train-notice-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border-bottom: 1px solid #F5F5F9;
+    cursor: pointer;
+}
+
+.yanyuan-train-notice-item:active {
+    background: #FAFAFA;
+}
+
+.yanyuan-train-notice-item:last-child {
+    border-bottom: none;
+}
+
+.notice-icon {
+    color: #81C784;
+}
+
+.notice-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.notice-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1A1A2E;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notice-time {
+    font-size: 11px;
+    color: #8E8E93;
+}
+
+.notice-arrow {
+    color: #C7C7CC;
+}
+
+/* ===== User 游客横幅 ===== */
+.yanyuan-train-user-banner {
+    background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+    margin: 16px 20px 0;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid #FFE082;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.yanyuan-train-user-banner:active {
+    opacity: 0.85;
+}
+
+.banner-icon {
+    color: #FF9800;
+    flex-shrink: 0;
+}
+
+.banner-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: #E65100;
+    flex: 1;
+    line-height: 1.4;
+}
+
+.banner-arrow {
+    color: #FF9800;
+    flex-shrink: 0;
+}
+
+.yanyuan-train-course-tag.public {
+    background: #E8F5E9;
+    color: #2E7D32;
+}
+
+.yanyuan-train-course-btn.view-btn {
+    background: #F3E5F5;
+    color: #7B1FA2;
+}

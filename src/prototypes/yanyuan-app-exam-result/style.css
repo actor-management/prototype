@@ -1,0 +1,254 @@
+/* Google Fonts 已移除：使用系统预装的 Noto Sans SC，避免远程加载阻塞渲染 */
+
+.yaer-container {
+    background: #F5F5F7;
+    height: 100vh;
+    max-height: 100dvh;
+    font-family: 'Noto Sans SC', -apple-system, sans-serif;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.yaer-scroll {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.yaer-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.yaer-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: #fff;
+    border-bottom: 1px solid #F0F0F0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.yaer-back {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #1A1A2E;
+    border-radius: 50%;
+}
+
+.yaer-back:active {
+    background: #F5F5F5;
+}
+
+.yaer-header-title {
+    flex: 1;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1A1A2E;
+    margin: 0;
+}
+
+.yaer-score-card {
+    margin: 20px;
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.yaer-score-card.passed {
+    background: linear-gradient(155deg, #4CAF50 0%, #388E3C 100%);
+    color: #fff;
+}
+
+.yaer-score-card.failed {
+    background: linear-gradient(155deg, #EF5350 0%, #C62828 100%);
+    color: #fff;
+}
+
+.yaer-score-card::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -30px;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 65%);
+    border-radius: 50%;
+}
+
+.yaer-score-icon {
+    margin-bottom: 8px;
+}
+
+.yaer-score-num {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 4px;
+    font-variant-numeric: tabular-nums;
+}
+
+.yaer-score-label {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 12px;
+}
+
+.yaer-score-badge {
+    display: inline-block;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.yaer-score-badge.passed {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.yaer-score-badge.failed {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.yaer-score-meta {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 12px;
+}
+
+.yaer-section {
+    padding: 0 20px 20px;
+}
+
+.yaer-section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1A1A2E;
+    margin: 0 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.yaer-dims {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.yaer-dim-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.yaer-dim-row:not(:last-child) {
+    border-bottom: 1px solid #F5F5F5;
+}
+
+.yaer-dim-name {
+    font-size: 13px;
+    color: #1A1A2E;
+    width: 70px;
+    flex-shrink: 0;
+}
+
+.yaer-dim-bar-wrap {
+    flex: 1;
+    height: 8px;
+    background: #F0F0F0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.yaer-dim-bar {
+    height: 100%;
+    border-radius: 4px;
+    transition: width .5s ease-out;
+}
+
+.yaer-dim-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.yaer-dim-bar-fill.high {
+    background: linear-gradient(90deg, #4CAF50, #66BB6A);
+}
+
+.yaer-dim-bar-fill.mid {
+    background: linear-gradient(90deg, #FF9800, #FFB74D);
+}
+
+.yaer-dim-bar-fill.low {
+    background: linear-gradient(90deg, #EF5350, #E57373);
+}
+
+.yaer-dim-score {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1A1A2E;
+    width: 30px;
+    text-align: right;
+}
+
+.yaer-actions {
+    padding: 0 20px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.yaer-action-btn {
+    height: 48px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: transform .12s;
+    min-height: 44px;
+}
+
+.yaer-action-btn.outline {
+    border: 1.5px solid #E0E0E0;
+    background: #fff;
+    color: #1A1A2E;
+}
+
+.yaer-action-btn.primary {
+    border: none;
+    background: linear-gradient(135deg, #E85D4A, #D94848);
+    color: #fff;
+}
+
+.yaer-action-btn.ghost {
+    border: none;
+    background: transparent;
+    color: #8E8E93;
+    font-size: 14px;
+}
+
+.yaer-action-btn:active {
+    transform: scale(0.97);
+}

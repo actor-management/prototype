@@ -1,0 +1,68 @@
+/**
+ * @name 公共底部导航栏样式
+ *
+ * 通用 Tab Bar 样式，各页面通过 classPrefix 属性适配。
+ * 此文件仅需在 app-tab-bar.tsx 中导入一次。
+ *
+ * 使用方式：
+ * 在各页面的 style.css 中无需再重复定义 tab-bar 相关样式，
+ * 只需确保 classPrefix 与此处的 .yanyuan-app- 前缀匹配。
+ *
+ * 若页面已有自定义 tab-bar 样式（如 .yanyuan-home-tab-bar），
+ * 则保持不变，通过 classPrefix='yanyuan-home' 使用页面自有样式。
+ */
+
+/* ===== 底部导航栏（通用） ===== */
+.yanyuan-app-tab-bar {
+  position: relative;
+  background: #FFFFFF;
+  padding: 6px 0 calc(6px + env(safe-area-inset-bottom));
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #EAEAEA;
+  z-index: 30;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.04);
+}
+
+.yanyuan-app-tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: #8E8E93;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 4px 12px;
+  min-height: 44px;
+  min-width: 44px;
+  position: relative;
+}
+
+.yanyuan-app-tab-item.active {
+  color: #E85D4A;
+}
+
+.yanyuan-app-tab-item.active::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #E85D4A 0%, #F0C060 100%);
+}
+
+.yanyuan-app-tab-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.yanyuan-app-tab-label {
+  font-size: 10px;
+  font-weight: 500;
+}

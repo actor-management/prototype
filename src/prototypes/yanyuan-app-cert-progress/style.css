@@ -1,0 +1,197 @@
+/* Google Fonts 已移除：使用系统预装的 Noto Sans SC，避免远程加载阻塞渲染 */
+
+.yacp-container {
+    background: #F5F5F7;
+    height: 100vh;
+    max-height: 100dvh;
+    min-height: 100vh;
+    font-family: 'Noto Sans SC', -apple-system, sans-serif;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.yacp-scroll {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.yacp-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.yacp-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: #fff;
+    border-bottom: 1px solid #F0F0F0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.yacp-back {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #1A1A2E;
+    border-radius: 50%;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.yacp-back:active {
+    background: #F5F5F5;
+}
+
+.yacp-header-title {
+    flex: 1;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1A1A2E;
+    margin: 0;
+}
+
+.yacp-info-card {
+    margin: 16px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.yacp-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.yacp-info-row:not(:last-child) {
+    border-bottom: 1px solid #F5F5F5;
+}
+
+.yacp-info-label {
+    font-size: 13px;
+    color: #8E8E93;
+}
+
+.yacp-info-value {
+    font-size: 14px;
+    color: #1A1A2E;
+    font-weight: 500;
+}
+
+.yacp-steps {
+    padding: 8px 20px 24px 20px;
+}
+
+.yacp-step {
+    display: flex;
+    gap: 16px;
+}
+
+.yacp-step-line-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 24px;
+    flex-shrink: 0;
+}
+
+.yacp-step-dot {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.yacp-step-dot.done {
+    color: #4CAF50;
+}
+
+.yacp-step-dot.current {
+    color: #E85D4A;
+}
+
+.yacp-step-dot.pending {
+    color: #D0D0D0;
+}
+
+.yacp-step-line {
+    width: 2px;
+    flex: 1;
+    min-height: 20px;
+    margin: 4px 0;
+}
+
+.yacp-step-line.done {
+    background: #4CAF50;
+}
+
+.yacp-step-line.current {
+    background: linear-gradient(180deg, #E85D4A 0%, #D0D0D0 100%);
+}
+
+.yacp-step-line.pending {
+    background: #E8E8E8;
+}
+
+.yacp-step-content {
+    flex: 1;
+    padding-bottom: 20px;
+}
+
+.yacp-step-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1A1A2E;
+    margin-bottom: 4px;
+}
+
+.yacp-step.pending .yacp-step-label {
+    color: #999;
+}
+
+.yacp-step-desc {
+    font-size: 13px;
+    color: #8E8E93;
+}
+
+.yacp-step.current .yacp-step-desc {
+    color: #E85D4A;
+}
+
+.yacp-step-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 10px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #E85D4A, #D94848);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform .12s;
+    min-height: 44px;
+}
+
+.yacp-step-action:active {
+    transform: scale(0.97);
+}

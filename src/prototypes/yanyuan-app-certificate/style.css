@@ -1,0 +1,551 @@
+/**
+ * @name ÊºîËâ∫‰∫∫ÊâçÂπ≥Âè∞ - ËØÅ‰π¶ÊúçÂä°Ê†∑Âºè
+ */
+
+/* Google Fonts “—“∆≥˝£∫ π”√œµÕ≥‘§◊∞µƒ Noto Sans SC£¨±‹√‚‘∂≥Ãº”‘ÿ◊Ë»˚‰÷»æ */
+
+.yanyuan-certserv-container {
+    background-color: #F5F5F7;
+    color: #1A1A2E;
+    height: 100vh;
+    max-height: 100dvh;
+    min-height: 100vh;
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+    overflow: hidden;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.yanyuan-certserv-scroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.yanyuan-certserv-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.yanyuan-certserv-header {
+    background: #fff;
+    padding: 16px 20px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    border-bottom: 1px solid #F0F0F0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* ===== ËØÅ‰π¶Âç°Áâá ===== */
+.yanyuan-certserv-section {
+    padding: 20px 20px 0;
+}
+
+.yanyuan-certserv-section-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.yanyuan-certserv-section-title .title-dot {
+    width: 4px;
+    height: 16px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, #E85D4A 0%, #F0C060 100%);
+}
+
+.yanyuan-certserv-cert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.yanyuan-certserv-cert-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    transition: transform 0.12s;
+    min-height: 44px;
+    position: relative;
+    overflow: hidden;
+}
+
+.yanyuan-certserv-cert-card:active {
+    transform: scale(0.985);
+}
+
+.yanyuan-certserv-cert-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.yanyuan-certserv-cert-icon.actor {
+    background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+    color: #F57F17;
+}
+
+.yanyuan-certserv-cert-icon.tech {
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    color: #1565C0;
+}
+
+.yanyuan-certserv-cert-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.yanyuan-certserv-cert-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1A1A2E;
+    margin-bottom: 3px;
+}
+
+.yanyuan-certserv-cert-no {
+    font-size: 12px;
+    color: #8E8E93;
+    margin-bottom: 4px;
+    font-family: 'SF Mono', 'Menlo', monospace;
+}
+
+.yanyuan-certserv-cert-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.yanyuan-certserv-cert-tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 6px;
+}
+
+.yanyuan-certserv-cert-tag.valid {
+    background: #E8F5E9;
+    color: #2E7D32;
+}
+
+.yanyuan-certserv-cert-tag.expiring {
+    background: #FFF3E0;
+    color: #E65100;
+}
+
+.yanyuan-certserv-cert-tag.expired {
+    background: #FFEBEE;
+    color: #C62828;
+}
+
+.yanyuan-certserv-cert-date {
+    font-size: 12px;
+    color: #AEAEB2;
+}
+
+.yanyuan-certserv-cert-arrow {
+    color: #C8C8CC;
+    flex-shrink: 0;
+}
+
+/* Á©∫Áä∂ÊÄ?*/
+.yanyuan-certserv-empty {
+    background: #fff;
+    border-radius: 14px;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.yanyuan-certserv-empty-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    opacity: 0.4;
+}
+
+.yanyuan-certserv-empty-text {
+    font-size: 14px;
+    color: #8E8E93;
+    margin-bottom: 16px;
+}
+
+.yanyuan-certserv-empty-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #E85D4A 0%, #D94848 100%);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    min-height: 44px;
+    transition: opacity 0.15s;
+}
+
+.yanyuan-certserv-empty-btn:active {
+    opacity: 0.85;
+}
+
+/* ===== ÂäüËÉΩÂÖ•Âè£ ===== */
+.yanyuan-certserv-entries {
+    margin: 0 20px 16px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.yanyuan-certserv-entry {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    cursor: pointer;
+    transition: background 0.12s;
+    position: relative;
+    min-height: 44px;
+}
+
+.yanyuan-certserv-entry:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 56px;
+    right: 16px;
+    height: 1px;
+    background: #F0F0F0;
+}
+
+.yanyuan-certserv-entry:active {
+    background: #FAFAFA;
+}
+
+.yanyuan-certserv-entry-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.yanyuan-certserv-entry-icon.apply {
+    background: #FFF3E0;
+    color: #E65100;
+}
+
+.yanyuan-certserv-entry-icon.progress {
+    background: #E3F2FD;
+    color: #1565C0;
+}
+
+.yanyuan-certserv-entry-icon.verify {
+    background: #E8F5E9;
+    color: #2E7D32;
+}
+
+.yanyuan-certserv-entry-icon.payment {
+    background: #FCE4EC;
+    color: #C62828;
+}
+
+.yanyuan-certserv-entry-content {
+    flex: 1;
+}
+
+.yanyuan-certserv-entry-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #1A1A2E;
+    margin-bottom: 2px;
+}
+
+.yanyuan-certserv-entry-desc {
+    font-size: 12px;
+    color: #8E8E93;
+}
+
+.yanyuan-certserv-entry-arrow {
+    color: #C8C8CC;
+    flex-shrink: 0;
+}
+
+.yanyuan-certserv-entry-count {
+    font-size: 12px;
+    font-weight: 600;
+    color: #E85D4A;
+    background: #FBE9E7;
+    padding: 2px 8px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+/* ===== Âπ¥ÂÆ°ÊèêÈÜí ===== */
+.yanyuan-certserv-renewal {
+    margin: 0 20px 20px;
+    background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+    border-radius: 14px;
+    padding: 16px;
+    border: 1px solid #FFE082;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.yanyuan-certserv-renewal-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #FF9800;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.yanyuan-certserv-renewal-content {
+    flex: 1;
+}
+
+.yanyuan-certserv-renewal-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #E65100;
+    margin-bottom: 4px;
+}
+
+.yanyuan-certserv-renewal-desc {
+    font-size: 13px;
+    color: #8D6E39;
+    line-height: 1.45;
+}
+
+.yanyuan-certserv-renewal-btn {
+    background: #FF9800;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: inherit;
+    min-height: 32px;
+    margin-top: 4px;
+    transition: opacity 0.15s;
+}
+
+.yanyuan-certserv-renewal-btn:active {
+    opacity: 0.85;
+}
+
+/* ===== Â∫ïÈÉ®ÂØºËà™ ===== */
+.yanyuan-certserv-tab-bar {
+    position: relative;
+    background: #fff;
+    padding: 6px 0 calc(6px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #EAEAEA;
+    z-index: 30;
+    flex-shrink: 0;
+    box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.04);
+}
+
+.yanyuan-certserv-tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    color: #8E8E93;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 4px 12px;
+    min-height: 44px;
+    min-width: 44px;
+    position: relative;
+}
+
+.yanyuan-certserv-tab-item.active {
+    color: #E85D4A;
+}
+
+.yanyuan-certserv-tab-item.active::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #E85D4A 0%, #F0C060 100%);
+}
+
+.yanyuan-certserv-tab-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.yanyuan-certserv-tab-label {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+/* Âä®Áîª */
+@keyframes yanyuan-certserv-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.yanyuan-certserv-section:nth-child(2) {
+    animation: yanyuan-certserv-fade-up 0.25s ease-out 0.05s both;
+}
+
+.yanyuan-certserv-section:nth-child(3) {
+    animation: yanyuan-certserv-fade-up 0.25s ease-out 0.1s both;
+}
+
+.yanyuan-certserv-renewal {
+    animation: yanyuan-certserv-fade-up 0.25s ease-out 0.15s both;
+}
+
+/* ===== Admin ÁÆ°ÁêÜÁªüËÆ°Âç?===== */
+.yanyuan-certserv-admin-stats {
+  display: flex;
+  gap: 10px;
+  padding: 16px 16px 0;
+}
+.yanyuan-certserv-stat-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 12px;
+  text-align: center;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
+.yanyuan-certserv-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.yanyuan-certserv-stat-card.pending::before { background: linear-gradient(90deg, #E85D4A, #F0C060); }
+.yanyuan-certserv-stat-card.issued::before { background: linear-gradient(90deg, #4CAF50, #81C784); }
+.yanyuan-certserv-stat-card.expiring::before { background: linear-gradient(90deg, #FF9800, #FFB74D); }
+.yanyuan-certserv-stat-num {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1A1A2E;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.yanyuan-certserv-stat-card.pending .yanyuan-certserv-stat-num { color: #E85D4A; }
+.yanyuan-certserv-stat-card.issued .yanyuan-certserv-stat-num { color: #4CAF50; }
+.yanyuan-certserv-stat-card.expiring .yanyuan-certserv-stat-num { color: #FF9800; }
+.yanyuan-certserv-stat-label {
+  font-size: 12px;
+  color: #8E8E93;
+  font-weight: 500;
+}
+
+/* ===== Admin ÁÆ°ÁêÜÂÖ•Âè£Ê†∑Âºè ===== */
+.title-dot.admin { background: #9C27B0; }
+.yanyuan-certserv-entry.admin { border-left: 3px solid #9C27B0; }
+.yanyuan-certserv-entry-icon.admin { background: #F3E5F5; color: #7B1FA2; }
+.yanyuan-certserv-entry-icon.renewal { background: #FFF3E0; color: #E65100; }
+.yanyuan-certserv-entry-icon.stats { background: #E8F5E9; color: #2E7D32; }
+.yanyuan-certserv-entry-icon.search { background: #E3F2FD; color: #1565C0; }
+.yanyuan-certserv-entry-count.admin {
+  background: #F3E5F5;
+  color: #7B1FA2;
+}
+
+/* ===== User ÂÖ¨ÂëäÂàóË°® ===== */
+.yanyuan-certserv-notices {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.yanyuan-certserv-notice-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #F5F5F5;
+  transition: background 0.12s;
+}
+.yanyuan-certserv-notice-item:active { background: #FAFAFA; }
+.yanyuan-certserv-notice-item:last-child { border-bottom: none; }
+.yanyuan-certserv-notice-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #E85D4A;
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+.yanyuan-certserv-notice-content { flex: 1; }
+.yanyuan-certserv-notice-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1A1A2E;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+.yanyuan-certserv-notice-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #8E8E93;
+}
+.yanyuan-certserv-notice-tag {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: #FFF3E0;
+  color: #E65100;
+  font-size: 10px;
+  font-weight: 500;
+}
+.yanyuan-certserv-notice-arrow { color: #C7C7CC; flex-shrink: 0; margin-top: 3px; }

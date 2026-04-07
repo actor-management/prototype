@@ -1,0 +1,274 @@
+/**
+ * @name ÊºîËâ∫‰∫∫ÊâçÂπ≥Âè∞ - ËØÅ‰π¶ËØ¶ÊÉÖÊ†∑Âºè
+ */
+/* Google Fonts “—“∆≥˝£∫ π”√œµÕ≥‘§◊∞µƒ Noto Sans SC£¨±‹√‚‘∂≥Ãº”‘ÿ◊Ë»˚‰÷»æ */
+
+.yanyuan-certd-container {
+    background-color: #F5F5F7;
+    color: #1A1A2E;
+    height: 100vh;
+    max-height: 100dvh;
+    min-height: 100vh;
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+    overflow: hidden;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.yanyuan-certd-scroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: calc(80px + env(safe-area-inset-bottom));
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.yanyuan-certd-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.yanyuan-certd-nav {
+    background: #fff;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #F0F0F0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.yanyuan-certd-nav-back {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: -6px;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.yanyuan-certd-nav-back:active {
+    background: #F0F0F0;
+}
+
+.yanyuan-certd-nav-title {
+    font-size: 17px;
+    font-weight: 600;
+    flex: 1;
+}
+
+/* ËØÅ‰π¶È¢ÑËßà */
+.yanyuan-certd-preview {
+    margin: 20px;
+    background: linear-gradient(135deg, #FFFDE7 0%, #FFF8E1 50%, #FFF3E0 100%);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #FFE082;
+    position: relative;
+    overflow: hidden;
+}
+
+.yanyuan-certd-preview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #E85D4A 0%, #F0C060 50%, #E85D4A 100%);
+}
+
+.yanyuan-certd-preview-badge {
+    font-size: 12px;
+    color: #BF360C;
+    background: rgba(191, 54, 12, 0.08);
+    padding: 4px 12px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.yanyuan-certd-preview-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #BF360C;
+    margin-bottom: 8px;
+}
+
+.yanyuan-certd-preview-name {
+    font-size: 16px;
+    color: #5D4037;
+    margin-bottom: 4px;
+}
+
+.yanyuan-certd-preview-no {
+    font-size: 12px;
+    color: #8D6E63;
+    font-family: 'SF Mono', monospace;
+}
+
+.yanyuan-certd-preview-seal {
+    width: 64px;
+    height: 64px;
+    border: 2px solid #E85D4A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px auto 0;
+    color: #E85D4A;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    opacity: 0.6;
+}
+
+/* ‰ø°ÊÅØÂàóË°® */
+.yanyuan-certd-info {
+    margin: 0 20px 16px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.yanyuan-certd-info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 16px;
+    position: relative;
+    min-height: 44px;
+    align-items: center;
+}
+
+.yanyuan-certd-info-row:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    height: 1px;
+    background: #F0F0F0;
+}
+
+.yanyuan-certd-info-label {
+    font-size: 14px;
+    color: #8E8E93;
+}
+
+.yanyuan-certd-info-value {
+    font-size: 14px;
+    color: #1A1A2E;
+    font-weight: 500;
+}
+
+.yanyuan-certd-info-tag {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.yanyuan-certd-info-tag.valid {
+    background: #E8F5E9;
+    color: #2E7D32;
+}
+
+.yanyuan-certd-info-tag.expiring {
+    background: #FFF3E0;
+    color: #E65100;
+}
+
+/* ‰∫åÁª¥Á†?*/
+.yanyuan-certd-qr {
+    margin: 0 20px 20px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.yanyuan-certd-qr-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.yanyuan-certd-qr-code {
+    width: 120px;
+    height: 120px;
+    background: #F5F5F5;
+    border-radius: 12px;
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+}
+
+.yanyuan-certd-qr-hint {
+    font-size: 12px;
+    color: #8E8E93;
+}
+
+/* Â∫ïÈÉ®ÊåâÈíÆÁª?*/
+.yanyuan-certd-footer {
+    position: relative;
+    z-index: 20;
+    background: #fff;
+    padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
+    border-top: 1px solid #EAEAEA;
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.yanyuan-certd-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    min-height: 44px;
+    transition: opacity 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.yanyuan-certd-btn:active {
+    opacity: 0.8;
+}
+
+.yanyuan-certd-btn.save {
+    background: #F5F5F5;
+    color: #666;
+}
+
+.yanyuan-certd-btn.share {
+    background: #E3F2FD;
+    color: #1565C0;
+}
+
+.yanyuan-certd-btn.renew {
+    background: linear-gradient(135deg, #E85D4A, #D94848);
+    color: #fff;
+}

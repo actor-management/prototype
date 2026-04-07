@@ -1,0 +1,371 @@
+/**
+ * @name ÊºîËâ∫‰∫∫ÊâçÂπ≥Âè∞ - ËÄÉÊ†∏ÂàóË°®Ê†∑Âºè
+ */
+/* Google Fonts “—“∆≥˝£∫ π”√œµÕ≥‘§◊∞µƒ Noto Sans SC£¨±‹√‚‘∂≥Ãº”‘ÿ◊Ë»˚‰÷»æ */
+
+.yanyuan-exam-container {
+    background-color: #F5F5F7;
+    color: #1A1A2E;
+    height: 100vh;
+    max-height: 100dvh;
+    min-height: 100vh;
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+    overflow: hidden;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.yanyuan-exam-scroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.yanyuan-exam-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.yanyuan-exam-nav {
+    background: #fff;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #F0F0F0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.yanyuan-exam-nav-back {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: -6px;
+    padding: 6px;
+}
+
+.yanyuan-exam-nav-back:active {
+    background: #F0F0F0;
+}
+
+.yanyuan-exam-nav-title {
+    font-size: 17px;
+    font-weight: 600;
+    flex: 1;
+}
+
+/* Tab */
+.yanyuan-exam-tabs {
+    display: flex;
+    margin: 16px 20px 0;
+    background: #EAEAEE;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.yanyuan-exam-tab {
+    flex: 1;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #8E8E93;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.yanyuan-exam-tab.active {
+    background: #fff;
+    color: #1A1A2E;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* ÊêúÁ¥¢‰∏éÈ´òÁ∫ßËøáÊª?*/
+.yanyuan-exam-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 20px 0;
+}
+
+.yanyuan-exam-search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #EAEAEE;
+    border-radius: 20px;
+    padding: 8px 14px;
+    color: #8E8E93;
+}
+
+.yanyuan-exam-search input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+    color: #1A1A2E;
+    width: 100%;
+}
+
+.yanyuan-exam-search input::placeholder {
+    color: #AEAEB2;
+}
+
+.yanyuan-exam-filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #1A1A2E;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ÂàÜÁ±ªÊªöÂä®ÂàóË°®Ôºà‰∫åÁ∫ßËèúÂçïÔºâ */
+.yanyuan-exam-category-scroll {
+    margin-top: 16px;
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.yanyuan-exam-category-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.yanyuan-exam-category-wrapper {
+    display: flex;
+    gap: 10px;
+    padding: 0 20px;
+    width: max-content;
+}
+
+.yanyuan-exam-category-pill {
+    padding: 6px 14px;
+    border-radius: 16px;
+    background: #fff;
+    font-size: 13px;
+    color: #666;
+    cursor: pointer;
+    border: 1px solid #EAEAEA;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.yanyuan-exam-category-pill.active {
+    background: #FBE9E7;
+    color: #D84315;
+    border-color: #FBE9E7;
+    font-weight: 500;
+}
+
+/* ËÄÉÊ†∏Âç°Áâá */
+.yanyuan-exam-list {
+    padding: 16px 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.yanyuan-exam-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: transform 0.12s;
+}
+
+.yanyuan-exam-card:active {
+    transform: scale(0.985);
+}
+
+.yanyuan-exam-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.yanyuan-exam-card-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1A1A2E;
+    flex: 1;
+    margin-right: 8px;
+}
+
+.yanyuan-exam-card-status {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.yanyuan-exam-card-status.open {
+    background: #E8F5E9;
+    color: #2E7D32;
+}
+
+.yanyuan-exam-card-status.enrolled {
+    background: #E3F2FD;
+    color: #1565C0;
+}
+
+.yanyuan-exam-card-status.completed {
+    background: #F5F5F5;
+    color: #666;
+}
+
+.yanyuan-exam-card-tags {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.yanyuan-exam-card-tag {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.yanyuan-exam-card-tag.yide {
+    background: #FBE9E7;
+    color: #D84315;
+}
+
+.yanyuan-exam-card-tag.perform {
+    background: #E3F2FD;
+    color: #1565C0;
+}
+
+.yanyuan-exam-card-tag.psych {
+    background: #F3E5F5;
+    color: #7B1FA2;
+}
+
+.yanyuan-exam-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 12px;
+}
+
+.yanyuan-exam-card-info-row {
+    font-size: 13px;
+    color: #8E8E93;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.yanyuan-exam-card-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.yanyuan-exam-card-btn {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 18px;
+    border-radius: 18px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    min-height: 34px;
+    transition: opacity 0.15s;
+}
+
+.yanyuan-exam-card-btn:active {
+    opacity: 0.8;
+}
+
+.yanyuan-exam-card-btn.enroll {
+    background: linear-gradient(135deg, #E85D4A, #D94848);
+    color: #fff;
+}
+
+.yanyuan-exam-card-btn.start {
+    background: linear-gradient(135deg, #42A5F5, #1E88E5);
+    color: #fff;
+}
+
+.yanyuan-exam-card-btn.result {
+    background: #F5F5F5;
+    color: #666;
+}
+
+/* ÊàêÁª©Ê†áÁ≠æ */
+.yanyuan-exam-score {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.yanyuan-exam-score-value {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.yanyuan-exam-score-value.pass {
+    color: #2E7D32;
+}
+
+.yanyuan-exam-score-value.fail {
+    color: #C62828;
+}
+
+.yanyuan-exam-score-tag {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.yanyuan-exam-score-tag.pass {
+    background: #E8F5E9;
+    color: #2E7D32;
+}
+
+.yanyuan-exam-score-tag.fail {
+    background: #FFEBEE;
+    color: #C62828;
+}
+
+/* Á©∫Áä∂ÊÄ?*/
+.yanyuan-exam-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    color: #8E8E93;
+}
+
+.yanyuan-exam-empty-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.yanyuan-exam-empty-text {
+    font-size: 14px;
+}

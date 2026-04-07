@@ -1,0 +1,354 @@
+/* Google Fonts 已移除：使用系统预装的 Noto Sans SC，避免远程加载阻塞渲染 */
+
+.yacr-container {
+    background: #F5F5F7;
+    height: 100vh;
+    max-height: 100dvh;
+    font-family: 'Noto Sans SC', -apple-system, sans-serif;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.yacr-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: #fff;
+    border-bottom: 1px solid #F0F0F0;
+    flex-shrink: 0;
+}
+
+.yacr-back {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #1A1A2E;
+    border-radius: 50%;
+}
+
+.yacr-back:active {
+    background: #F5F5F5;
+}
+
+.yacr-header-title {
+    flex: 1;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1A1A2E;
+    margin: 0;
+}
+
+.yacr-step-bar {
+    display: flex;
+    padding: 16px 20px;
+    background: #fff;
+    border-bottom: 1px solid #F0F0F0;
+    flex-shrink: 0;
+    gap: 4px;
+}
+
+.yacr-step-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.yacr-step-num {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #E8E8E8;
+    color: #999;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s;
+}
+
+.yacr-step-item.active .yacr-step-num {
+    background: #E85D4A;
+    color: #fff;
+}
+
+.yacr-step-item.done .yacr-step-num {
+    background: #4CAF50;
+    color: #fff;
+}
+
+.yacr-step-text {
+    font-size: 11px;
+    color: #999;
+}
+
+.yacr-step-item.active .yacr-step-text {
+    color: #E85D4A;
+    font-weight: 600;
+}
+
+.yacr-step-item.done .yacr-step-text {
+    color: #4CAF50;
+}
+
+.yacr-scroll {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.yacr-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.yacr-section {
+    padding: 20px;
+}
+
+.yacr-section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1A1A2E;
+    margin: 0 0 16px;
+}
+
+.yacr-cert-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color .2s;
+    min-height: 44px;
+}
+
+.yacr-cert-card.selected {
+    border-color: #E85D4A;
+}
+
+.yacr-cert-card:active {
+    transform: scale(0.99);
+}
+
+.yacr-cert-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+    color: #E65100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.yacr-cert-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.yacr-cert-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1A1A2E;
+}
+
+.yacr-cert-expires {
+    font-size: 12px;
+    color: #8E8E93;
+    margin-top: 2px;
+}
+
+.yacr-cert-status {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.yacr-cert-status.warning {
+    background: #FFF3E0;
+    color: #E65100;
+}
+
+.yacr-cert-status.normal {
+    background: #E8F5E9;
+    color: #2E7D32;
+}
+
+.yacr-upload-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #8E8E93;
+    cursor: pointer;
+    border: 2px dashed #E0E0E0;
+    transition: border-color .2s;
+}
+
+.yacr-upload-card:active {
+    border-color: #E85D4A;
+}
+
+.yacr-upload-hint {
+    font-size: 12px;
+    color: #C8C8CC;
+}
+
+.yacr-fee-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.yacr-fee-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 14px;
+    color: #1A1A2E;
+}
+
+.yacr-fee-amount {
+    font-weight: 500;
+}
+
+.yacr-fee-divider {
+    height: 1px;
+    background: #F0F0F0;
+    margin: 8px 0;
+}
+
+.yacr-fee-row.total {
+    font-weight: 600;
+}
+
+.yacr-fee-total {
+    color: #E85D4A;
+    font-size: 18px;
+}
+
+.yacr-pay-method {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 12px;
+    background: #F5F5F7;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #1A1A2E;
+}
+
+.yacr-pay-check {
+    color: #4CAF50;
+    margin-left: auto;
+}
+
+.yacr-done {
+    text-align: center;
+    padding: 48px 20px;
+}
+
+.yacr-done-icon {
+    color: #4CAF50;
+    margin-bottom: 16px;
+}
+
+.yacr-done-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1A1A2E;
+    margin: 0 0 8px;
+}
+
+.yacr-done-desc {
+    font-size: 14px;
+    color: #8E8E93;
+    margin: 0 0 24px;
+}
+
+.yacr-done-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #E85D4A, #D94848);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.yacr-footer {
+    padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
+    background: #fff;
+    border-top: 1px solid #F0F0F0;
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.yacr-btn-prev {
+    flex: 1;
+    height: 48px;
+    border-radius: 12px;
+    border: 1.5px solid #E0E0E0;
+    background: #fff;
+    color: #1A1A2E;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.yacr-btn-next {
+    flex: 2;
+    height: 48px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #E85D4A, #D94848);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform .12s;
+}
+
+.yacr-btn-next.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.yacr-btn-next:active:not(.disabled) {
+    transform: scale(0.98);
+}

@@ -1,0 +1,265 @@
+/* Google Fonts 已移除：使用系统预装的 Noto Sans SC，避免远程加载阻塞渲染 */
+
+.yaap-container {
+    background: #F5F5F7;
+    height: 100vh;
+    max-height: 100dvh;
+    font-family: 'Noto Sans SC', -apple-system, sans-serif;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.yaap-scroll {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.yaap-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.yaap-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: #fff;
+    border-bottom: 1px solid #F0F0F0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.yaap-back {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #1A1A2E;
+    border-radius: 50%;
+}
+
+.yaap-back:active {
+    background: #F5F5F5;
+}
+
+.yaap-header-title {
+    flex: 1;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1A1A2E;
+    margin: 0;
+}
+
+.yaap-status-card {
+    margin: 20px;
+    border-radius: 16px;
+    padding: 28px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.yaap-status-card.reviewing {
+    background: linear-gradient(135deg, #2196F3, #1976D2);
+}
+
+.yaap-status-card.approved {
+    background: linear-gradient(135deg, #4CAF50, #388E3C);
+}
+
+.yaap-status-card.rejected {
+    background: linear-gradient(135deg, #EF5350, #C62828);
+}
+
+.yaap-status-text {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 8px 0 4px;
+}
+
+.yaap-status-hint {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.yaap-reject-card {
+    margin: 0 20px 20px;
+    background: #FFF3F0;
+    border: 1px solid #FFCDD2;
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    gap: 10px;
+}
+
+.yaap-reject-icon {
+    color: #EF5350;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.yaap-reject-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #C62828;
+    margin-bottom: 4px;
+}
+
+.yaap-reject-type {
+    font-size: 12px;
+    font-weight: 500;
+    color: #E65100;
+    margin-bottom: 4px;
+    background: #FFF3E0;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.yaap-reject-reason {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.yaap-timeline-section {
+    padding: 0 20px 20px;
+}
+
+.yaap-section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1A1A2E;
+    margin: 0 0 16px;
+}
+
+.yaap-timeline {
+    padding-left: 4px;
+}
+
+.yaap-tl-item {
+    display: flex;
+    gap: 14px;
+}
+
+.yaap-tl-dot-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20px;
+    flex-shrink: 0;
+}
+
+.yaap-tl-dot {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.yaap-tl-dot.done {
+    color: #4CAF50;
+}
+
+.yaap-tl-dot.current {
+    color: #2196F3;
+}
+
+.yaap-tl-dot.pending {
+    color: #D0D0D0;
+}
+
+.yaap-tl-line {
+    width: 2px;
+    flex: 1;
+    min-height: 20px;
+    margin: 4px 0;
+}
+
+.yaap-tl-line.done {
+    background: #4CAF50;
+}
+
+.yaap-tl-line.current {
+    background: linear-gradient(180deg, #2196F3, #D0D0D0);
+}
+
+.yaap-tl-line.pending {
+    background: #E8E8E8;
+}
+
+.yaap-tl-content {
+    flex: 1;
+    padding-bottom: 20px;
+}
+
+.yaap-tl-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1A1A2E;
+}
+
+.yaap-tl-item.pending .yaap-tl-label {
+    color: #999;
+}
+
+.yaap-tl-desc {
+    font-size: 13px;
+    color: #8E8E93;
+    margin-top: 2px;
+}
+
+.yaap-tl-item.current .yaap-tl-desc {
+    color: #2196F3;
+}
+
+.yaap-tl-time {
+    font-size: 11px;
+    color: #AEAEB2;
+    margin-top: 4px;
+}
+
+.yaap-actions {
+    padding: 0 20px 32px;
+}
+
+.yaap-action-btn {
+    width: 100%;
+    height: 48px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: transform .12s;
+}
+
+.yaap-action-btn.primary {
+    border: none;
+    background: linear-gradient(135deg, #E85D4A, #D94848);
+    color: #fff;
+}
+
+.yaap-action-btn.outline {
+    border: 1.5px solid #E0E0E0;
+    background: #fff;
+    color: #1A1A2E;
+}
+
+.yaap-action-btn:active {
+    transform: scale(0.97);
+}

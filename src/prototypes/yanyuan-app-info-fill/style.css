@@ -1,0 +1,383 @@
+/**
+ * @name 婕旇壓浜烘墠骞冲彴 - 涓�汉淇℃伅濉�姤鏍峰紡
+ */
+/* Google Fonts 已移除：使用系统预装的 Noto Sans SC，避免远程加载阻塞渲染 */
+
+.yanyuan-infofill-container {
+    background-color: #F5F5F7;
+    color: #1A1A2E;
+    height: 100vh;
+    max-height: 100dvh;
+    min-height: 100vh;
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+    overflow: hidden;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.yanyuan-infofill-scroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: calc(80px + env(safe-area-inset-bottom));
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.yanyuan-infofill-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* 瀵艰埅鏍?*/
+.yanyuan-infofill-nav {
+    background: #fff;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #F0F0F0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.yanyuan-infofill-nav-back {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.12s;
+    min-height: 44px;
+    min-width: 44px;
+    margin: -6px;
+    padding: 6px;
+}
+
+.yanyuan-infofill-nav-back:active {
+    background: #F0F0F0;
+}
+
+.yanyuan-infofill-nav-title {
+    font-size: 17px;
+    font-weight: 600;
+    flex: 1;
+}
+
+/* 淇℃伅瀹屾暣搴﹁繘搴?*/
+.yanyuan-infofill-progress {
+    margin: 16px 20px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.yanyuan-infofill-progress-bar-wrap {
+    flex: 1;
+    height: 6px;
+    background: #F0F0F0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.yanyuan-infofill-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #E85D4A 0%, #F0C060 100%);
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+.yanyuan-infofill-progress-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #E85D4A;
+    white-space: nowrap;
+}
+
+/* 鎶樺彔闈㈡澘 */
+.yanyuan-infofill-section {
+    margin: 0 20px 12px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.yanyuan-infofill-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    cursor: pointer;
+    transition: background 0.12s;
+    min-height: 44px;
+}
+
+.yanyuan-infofill-section-header:active {
+    background: #FAFAFA;
+}
+
+.yanyuan-infofill-section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1A1A2E;
+}
+
+.yanyuan-infofill-section-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.yanyuan-infofill-section-icon.basic {
+    background: #E3F2FD;
+    color: #1565C0;
+}
+
+.yanyuan-infofill-section-icon.contact {
+    background: #E8F5E9;
+    color: #2E7D32;
+}
+
+.yanyuan-infofill-section-icon.career {
+    background: #FFF3E0;
+    color: #E65100;
+}
+
+.yanyuan-infofill-section-icon.edu {
+    background: #F3E5F5;
+    color: #7B1FA2;
+}
+
+.yanyuan-infofill-section-icon.attach {
+    background: #FBE9E7;
+    color: #D84315;
+}
+
+.yanyuan-infofill-section-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.yanyuan-infofill-section-badge {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.yanyuan-infofill-section-badge.done {
+    background: #E8F5E9;
+    color: #2E7D32;
+}
+
+.yanyuan-infofill-section-badge.todo {
+    background: #FFF3E0;
+    color: #E65100;
+}
+
+.yanyuan-infofill-section-arrow {
+    color: #C8C8CC;
+    transition: transform 0.2s;
+}
+
+.yanyuan-infofill-section-arrow.open {
+    transform: rotate(180deg);
+}
+
+/* 琛ㄥ崟鍐呭� */
+.yanyuan-infofill-section-body {
+    padding: 0 16px 16px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease;
+}
+
+.yanyuan-infofill-section-body.open {
+    max-height: 2000px;
+    opacity: 1;
+    padding: 0 16px 16px;
+}
+
+/* 文件上传区域 */
+.yanyuan-infofill-file-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.yanyuan-infofill-file-btn {
+    padding: 10px 12px;
+    border: 1px dashed #D0D0D0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #8E8E93;
+    background: #FAFAFA;
+    cursor: pointer;
+    text-align: center;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.yanyuan-infofill-file-btn:active {
+    border-color: #E85D4A;
+    background: #FFF5F4;
+}
+
+/* 文本域 */
+.yanyuan-infofill-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1A1A2E;
+    background: #FAFAFA;
+    font-family: inherit;
+    outline: none;
+    resize: none;
+    min-height: 80px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.yanyuan-infofill-textarea:focus {
+    border-color: #E85D4A;
+    background: #fff;
+}
+
+.yanyuan-infofill-textarea::placeholder {
+    color: #AEAEB2;
+}
+
+/* 字段提示文本 */
+.yanyuan-infofill-field-hint {
+    font-size: 11px;
+    color: #AEAEB2;
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
+/* 输入框包裹 */
+.yanyuan-infofill-input-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.yanyuan-infofill-field {
+    margin-bottom: 14px;
+}
+
+.yanyuan-infofill-label {
+    font-size: 13px;
+    color: #8E8E93;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.yanyuan-infofill-label .required {
+    color: #E85D4A;
+}
+
+.yanyuan-infofill-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1A1A2E;
+    background: #FAFAFA;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+    min-height: 44px;
+}
+
+.yanyuan-infofill-input:focus {
+    border-color: #E85D4A;
+    background: #fff;
+}
+
+.yanyuan-infofill-input::placeholder {
+    color: #AEAEB2;
+}
+
+.yanyuan-infofill-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1A1A2E;
+    background: #FAFAFA;
+    font-family: inherit;
+    appearance: none;
+    outline: none;
+    min-height: 44px;
+    box-sizing: border-box;
+}
+
+/* 搴曢儴鍥哄畾鎸夐挳 */
+.yanyuan-infofill-footer {
+    position: relative;
+    z-index: 20;
+    background: #fff;
+    padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
+    border-top: 1px solid #EAEAEA;
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.yanyuan-infofill-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    min-height: 44px;
+    transition: opacity 0.15s;
+}
+
+.yanyuan-infofill-btn:active {
+    opacity: 0.8;
+}
+
+.yanyuan-infofill-btn.draft {
+    background: #F5F5F5;
+    color: #666;
+}
+
+.yanyuan-infofill-btn.submit {
+    background: linear-gradient(135deg, #E85D4A 0%, #D94848 100%);
+    color: #fff;
+}

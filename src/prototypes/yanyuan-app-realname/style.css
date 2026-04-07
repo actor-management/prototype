@@ -1,0 +1,435 @@
+/**
+ * @name 演艺人才平台 - 实名认证 高亮优化版
+ */
+
+.yarn-container {
+    background-color: #ffffff;
+    color: #1A1A2E;
+    height: 100vh;
+    max-height: 100dvh;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+    overflow: hidden;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 顶部返回 */
+.yarn-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    z-index: 20;
+    position: relative;
+    background: transparent;
+}
+
+.yarn-header-dark {
+    color: #fff;
+}
+
+.yarn-back {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin: -8px;
+}
+
+.yarn-header-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* 渐显卡片 */
+.yarn-scroll {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+    scrollbar-width: none;
+}
+
+.yarn-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.yarn-step-card {
+    padding: 0 24px;
+    animation: fadeSlideUp 0.4s ease-out both;
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.yarn-title-main {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 16px 0 8px;
+    background: linear-gradient(135deg, #222, #555);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.yarn-title-sub {
+    font-size: 14px;
+    color: #8E8E93;
+    margin-bottom: 32px;
+}
+
+/* 表单系 */
+.yarn-form-group {
+    margin-bottom: 24px;
+}
+
+.yarn-form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.yarn-form-input {
+    width: 100%;
+    padding: 16px 0;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid #E5E5E5;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.2s;
+    font-weight: 500;
+}
+
+.yarn-form-input::placeholder {
+    color: #C7C7CC;
+    font-weight: 400;
+}
+
+.yarn-form-input:focus {
+    border-bottom-color: #D32F2F;
+}
+
+/* 身份证上传相机区 */
+.yarn-idcard-box {
+    width: 100%;
+    aspect-ratio: 1.58;
+    background: #F7F8FA;
+    border: 2px dashed #E5E5EA;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.yarn-idcard-box:active {
+    background: #F0F0F0;
+}
+
+.yarn-idcard-box.done {
+    border-color: #4CAF50;
+    background: #E8F5E9;
+}
+
+.yarn-idcard-box.done .yarn-idcard-content {
+    color: #2E7D32;
+}
+
+.yarn-idcard-edge {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #D32F2F;
+}
+
+.yarn-idcard-edge.tl {
+    top: 12px;
+    left: 12px;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 6px 0 0 0;
+}
+
+.yarn-idcard-edge.tr {
+    top: 12px;
+    right: 12px;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 0 6px 0 0;
+}
+
+.yarn-idcard-edge.bl {
+    bottom: 12px;
+    left: 12px;
+    border-right: none;
+    border-top: none;
+    border-radius: 0 0 0 6px;
+}
+
+.yarn-idcard-edge.br {
+    bottom: 12px;
+    right: 12px;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 6px 0;
+}
+
+.yarn-idcard-bg-icon {
+    position: absolute;
+    opacity: 0.05;
+    transform: scale(2.5);
+    z-index: 1;
+}
+
+.yarn-idcard-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #8E8E93;
+}
+
+.yarn-idcard-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    color: #D32F2F;
+    margin-bottom: 12px;
+}
+
+.yarn-idcard-desc {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* 底部操作区 */
+.yarn-footer {
+    padding: 16px 24px calc(16px + env(safe-area-inset-bottom));
+}
+
+.yarn-btn-primary {
+    width: 100%;
+    padding: 15px;
+    border-radius: 24px;
+    border: none;
+    background: linear-gradient(90deg, #D32F2F, #E57373);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.yarn-btn-primary:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 6px rgba(211, 47, 47, 0.2);
+}
+
+.yarn-btn-primary:disabled {
+    background: #E5E5EA;
+    box-shadow: none;
+    color: #8E8E93;
+    pointer-events: none;
+}
+
+/* 次要按钮（§4.3.3 Step 5 "继续完善信息"仅 Actor 可见） */
+.yarn-btn-secondary {
+    width: 100%;
+    padding: 15px;
+    border-radius: 24px;
+    border: 1.5px solid #E0E0E0;
+    background: #fff;
+    color: #1A1A2E;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.yarn-btn-secondary:active {
+    transform: scale(0.98);
+    background: #F5F5F5;
+}
+
+/* ===== 人脸活体检测 ===== */
+.yarn-face-dark {
+    background: #000;
+    color: #fff;
+}
+
+.yarn-face-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-top: 40px;
+}
+
+.yarn-face-radar {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    position: relative;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.85);
+    /* 用box-shadow做四周蒙版 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.yarn-face-radar.scanning {
+    border-color: #4CAF50;
+}
+
+.yarn-face-avatar {
+    width: 140px;
+    height: 140px;
+    opacity: 0.1;
+}
+
+/* 扫描线光束 */
+.yarn-face-scanbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.yarn-face-scanline {
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, transparent, #4CAF50, transparent);
+    box-shadow: 0 0 10px #4CAF50, 0 10px 30px rgba(76, 175, 80, 0.5);
+    top: 0;
+    opacity: 0;
+}
+
+.yarn-face-radar.scanning .yarn-face-scanline {
+    animation: scanner 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes scanner {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+.yarn-face-hint {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.yarn-face-subhint {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ===== 结果页 ===== */
+.yarn-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 32px;
+    text-align: center;
+}
+
+.yarn-result-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.yarn-result-icon.success {
+    background: #E8F5E9;
+    color: #4CAF50;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.yarn-result-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1A1A2E;
+}
+
+.yarn-result-desc {
+    font-size: 15px;
+    color: #8E8E93;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}

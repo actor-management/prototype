@@ -1,0 +1,220 @@
+/**
+ * @name ÊºîËâ∫‰∫∫ÊâçÂπ≥Âè∞ - Ê∂àÊÅØ‰∏≠ÂøÉÊ†∑Âºè
+ */
+/* Google Fonts “—“∆≥˝£∫ π”√œµÕ≥‘§◊∞µƒ Noto Sans SC£¨±‹√‚‘∂≥Ãº”‘ÿ◊Ë»˚‰÷»æ */
+
+.yanyuan-msg-container {
+    background-color: #F5F5F7;
+    color: #1A1A2E;
+    height: 100vh;
+    max-height: 100dvh;
+    min-height: 100vh;
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+    overflow: hidden;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.yanyuan-msg-scroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.yanyuan-msg-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.yanyuan-msg-nav {
+    background: #fff;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #F0F0F0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.yanyuan-msg-nav-back {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: -6px;
+    padding: 6px;
+}
+
+.yanyuan-msg-nav-back:active {
+    background: #F0F0F0;
+}
+
+.yanyuan-msg-nav-title {
+    font-size: 17px;
+    font-weight: 600;
+    flex: 1;
+}
+
+.yanyuan-msg-nav-action {
+    font-size: 14px;
+    color: #E85D4A;
+    cursor: pointer;
+    padding: 6px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.yanyuan-msg-tabs {
+    display: flex;
+    margin: 16px 20px 0;
+    background: #EAEAEE;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.yanyuan-msg-tab {
+    flex: 1;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #8E8E93;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.yanyuan-msg-tab.active {
+    background: #fff;
+    color: #1A1A2E;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.yanyuan-msg-list {
+    padding: 16px 20px 0;
+}
+
+.yanyuan-msg-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    transition: transform 0.12s;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    min-height: 44px;
+}
+
+.yanyuan-msg-item:active {
+    transform: scale(0.985);
+}
+
+.yanyuan-msg-item.unread {
+    background: #FFF9F8;
+}
+
+.yanyuan-msg-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 16px;
+}
+
+.yanyuan-msg-icon.system {
+    background: #E3F2FD;
+    color: #1565C0;
+}
+
+.yanyuan-msg-icon.remind {
+    background: #FFF3E0;
+    color: #E65100;
+}
+
+.yanyuan-msg-icon.warning {
+    background: #FFEBEE;
+    color: #C62828;
+}
+
+.yanyuan-msg-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.yanyuan-msg-title-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.yanyuan-msg-unread-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #E85D4A;
+    flex-shrink: 0;
+}
+
+.yanyuan-msg-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1A1A2E;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.yanyuan-msg-summary {
+    font-size: 13px;
+    color: #8E8E93;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.yanyuan-msg-time {
+    font-size: 12px;
+    color: #AEAEB2;
+    margin-top: 4px;
+}
+
+.yanyuan-msg-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: #AEAEB2;
+}
+
+.yanyuan-msg-empty-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    opacity: 0.4;
+}
+
+.yanyuan-msg-empty-text {
+    font-size: 14px;
+}

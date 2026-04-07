@@ -1,0 +1,482 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background: #F5F5F9;
+}
+
+.yanyuan-certdetail-container {
+    background-color: #F5F5F9;
+    height: 100vh;
+    max-height: 100dvh;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    position: relative;
+    overflow: hidden;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 顶部栏 */
+.yanyuan-certdetail-header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 44px;
+    padding: 4px 16px;
+    background: white;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.yanyuan-certdetail-back {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.yanyuan-certdetail-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1A1A2E;
+}
+
+.yanyuan-certdetail-tools {
+    width: 32px;
+}
+
+.yanyuan-certdetail-scroll {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    /* IE/Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.yanyuan-certdetail-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* 顶部摘要区块 */
+.yanyuan-certdetail-summary-bg {
+    background: white;
+    padding: 20px 16px;
+    margin-bottom: 12px;
+}
+
+.yanyuan-certdetail-summary {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+}
+
+.yanyuan-certdetail-avatar-large {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #E85D4A, #F0C060);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(232, 93, 74, 0.2);
+}
+
+.yanyuan-certdetail-s-info {
+    flex: 1;
+}
+
+.yanyuan-certdetail-s-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1A1A2E;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.yanyuan-certdetail-s-desc {
+    font-size: 13px;
+    color: #8E8E93;
+}
+
+.detail-badge {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+.yanyuan-certdetail-content-wrap {
+    padding: 0 16px 20px;
+}
+
+/* 通用折叠卡片 */
+.yanyuan-certdetail-card {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.yanyuan-certdetail-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid #F3F3F3;
+}
+
+.yanyuan-certdetail-card-header.no-border {
+    border-bottom: none;
+}
+
+.yanyuan-certdetail-card-header:active {
+    background: #FAFAFA;
+}
+
+.yanyuan-certdetail-card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1A1A2E;
+}
+
+.yanyuan-certdetail-section-icon {
+    color: #E85D4A;
+}
+
+.yanyuan-certdetail-section-icon.blue {
+    color: #2196F3;
+}
+
+.yanyuan-certdetail-section-icon.orange {
+    color: #FF9800;
+}
+
+.yanyuan-certdetail-section-icon.gray {
+    color: #9E9E9E;
+}
+
+.yanyuan-certdetail-card-body {
+    padding: 0 16px 16px;
+}
+
+/* 身份证网格 */
+.yanyuan-certdetail-idcard-grid {
+    display: flex;
+    gap: 12px;
+    padding: 0 16px 16px;
+}
+
+.yanyuan-certdetail-idcard-box {
+    flex: 1;
+    aspect-ratio: 1.58;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #F5F5F9;
+    border: 1px dashed #D1D1D6;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.yanyuan-certdetail-idcard-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #8E8E93;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* 信息行 */
+.yanyuan-certdetail-info-row {
+    display: flex;
+    padding: 12px 0;
+    border-bottom: 1px solid #F9F9FB;
+}
+
+.yanyuan-certdetail-info-row:first-child {
+    padding-top: 16px;
+}
+
+.yanyuan-certdetail-info-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.yanyuan-certdetail-info-label {
+    width: 90px;
+    font-size: 14px;
+    color: #8E8E93;
+    flex-shrink: 0;
+}
+
+.yanyuan-certdetail-info-value {
+    flex: 1;
+    font-size: 14px;
+    color: #1A1A2E;
+    font-weight: 500;
+    word-break: break-all;
+}
+
+/* 附件 */
+.yanyuan-certdetail-attachment {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    background: #FAFAFB;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #F3F3F3;
+}
+
+.yanyuan-certdetail-att-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: #FFF3E0;
+    color: #FF9800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.yanyuan-certdetail-att-name {
+    flex: 1;
+    font-size: 14px;
+    color: #1A1A2E;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.yanyuan-certdetail-att-action {
+    color: #E85D4A;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+/* 审核历史 - 横向步骤条布局 */
+.yanyuan-certdetail-timeline {
+    padding: 24px 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.yanyuan-certdetail-timeline::-webkit-scrollbar {
+    display: none;
+}
+
+/* 贯穿全部节点的横线 */
+.yanyuan-certdetail-timeline::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    /* dot半径8 + padding 24 */
+    left: 40px;
+    right: 40px;
+    height: 2px;
+    background: #F3F3F3;
+    z-index: 1;
+}
+
+.yanyuan-certdetail-timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    min-width: 80px;
+}
+
+.yanyuan-certdetail-timeline-item:not(:last-child)::after {
+    display: none;
+    /* 移除之前的竖线 */
+}
+
+.yanyuan-certdetail-timeline-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #E6E6EA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 3;
+}
+
+.yanyuan-certdetail-timeline-dot.active {
+    background: #E85D4A;
+    box-shadow: 0 0 0 4px rgba(232, 93, 74, 0.15);
+}
+
+.yanyuan-certdetail-timeline-content {
+    flex: none;
+    text-align: center;
+}
+
+.yanyuan-certdetail-tl-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1A1A2E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+.yanyuan-certdetail-tl-time {
+    font-size: 11px;
+    color: #8E8E93;
+    font-weight: normal;
+}
+
+.yanyuan-certdetail-tl-desc {
+    font-size: 11px;
+    color: #8E8E93;
+    line-height: 1.4;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin-top: 4px;
+    max-width: 90px;
+    white-space: wrap;
+}
+
+/* 底部操作区 */
+.yanyuan-certdetail-bottom-bar {
+    display: flex;
+    gap: 12px;
+    padding: 12px 16px;
+    background: white;
+    border-top: 1px solid #EBEBEB;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.03);
+    flex-shrink: 0;
+}
+
+.yanyuan-certdetail-action-btn {
+    flex: 1;
+    height: 44px;
+    border-radius: 22px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.yanyuan-certdetail-action-btn:active {
+    transform: scale(0.98);
+}
+
+.yanyuan-certdetail-action-btn.reject {
+    background: #FFEBEE;
+    color: #D32F2F;
+}
+
+.yanyuan-certdetail-action-btn.pass {
+    background: #E85D4A;
+    color: white;
+    box-shadow: 0 4px 12px rgba(232, 93, 74, 0.3);
+}
+
+/* 图片全屏预览 */
+.yanyuan-certdetail-image-previewer {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.yanyuan-certdetail-preview-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.yanyuan-certdetail-preview-img-box {
+    width: 90%;
+    aspect-ratio: 1.58;
+    border-radius: 12px;
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.yanyuan-certdetail-preview-mock {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* 共享状态样式（复用自admin台） */
+.yanyuan-certadmin-status.pending {
+    background: #FFF3E0;
+    color: #E65100;
+}
+
+.yanyuan-certadmin-status.approved {
+    background: #E8F5E9;
+    color: #2E7D32;
+}
+
+.yanyuan-certadmin-status.rejected {
+    background: #FFEBEE;
+    color: #C62828;
+}

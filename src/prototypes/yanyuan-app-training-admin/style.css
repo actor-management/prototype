@@ -1,0 +1,472 @@
+/**
+ * @name ÂüπËÆ≠ËÄÉÊ†∏ÁßªÂä®ÁÆ°ÁêÜÂè∞Ê†∑Âº?
+ */
+/* Google Fonts “—“∆≥˝£∫ π”√œµÕ≥‘§◊∞µƒ Noto Sans SC£¨±‹√‚‘∂≥Ãº”‘ÿ◊Ë»˚‰÷»æ */
+
+.yanyuan-ta-container {
+    background-color: #F8F9FA;
+    color: #1A1A2E;
+    height: 100vh;
+    max-height: 100dvh;
+    min-height: 100vh;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+.yanyuan-ta-header {
+    background: #fff;
+    padding-top: calc(12px + env(safe-area-inset-top));
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    z-index: 20;
+    position: relative;
+}
+
+.yanyuan-ta-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px 12px;
+}
+
+.yanyuan-ta-back,
+.yanyuan-ta-right {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #1A1A2E;
+}
+
+.yanyuan-ta-title {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.yanyuan-ta-tabs {
+    display: flex;
+    padding: 0 16px;
+    gap: 20px;
+}
+
+.yanyuan-ta-tab {
+    padding: 12px 4px;
+    font-size: 15px;
+    color: #666;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.yanyuan-ta-tab.active {
+    color: #1A1A2E;
+    font-weight: 600;
+}
+
+.yanyuan-ta-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #3B82F6;
+    border-radius: 3px 3px 0 0;
+}
+
+.ta-badge {
+    background: #EF4444;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* Scroll Area */
+.yanyuan-ta-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    padding-bottom: calc(30px + env(safe-area-inset-bottom));
+}
+
+.yanyuan-ta-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* Cards */
+.yanyuan-ta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.yanyuan-ta-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+}
+
+.yanyuan-ta-card-body {
+    padding: 16px;
+}
+
+.yanyuan-ta-card-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.yanyuan-ta-card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ta-meta-item {
+    font-size: 12px;
+    color: #6B7280;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.yanyuan-ta-card-footer {
+    padding: 12px 16px;
+    background: #F9FAFB;
+    border-top: 1px dashed #E5E7EB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ta-status-tag {
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.ta-status-tag.published {
+    background: #E0F2FE;
+    color: #0284C7;
+}
+
+.ta-status-tag.draft {
+    background: #F3F4F6;
+    color: #4B5563;
+}
+
+.ta-status-tag.offline {
+    background: #FEF2F2;
+    color: #DC2626;
+}
+
+.ta-status-tag.ongoing {
+    background: #ECFCCB;
+    color: #4D7C0F;
+}
+
+.ta-status-tag.ended {
+    background: #F1F5F9;
+    color: #64748B;
+}
+
+.ta-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.ta-btn {
+    border: none;
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.ta-btn:active {
+    transform: scale(0.96);
+}
+
+.ta-btn.text {
+    background: transparent;
+    color: #3B82F6;
+    padding: 6px;
+}
+
+.ta-btn.primary {
+    background: #3B82F6;
+    color: #fff;
+}
+
+.ta-btn.danger {
+    background: #EF4444;
+    color: #fff;
+}
+
+.ta-btn.disabled {
+    background: #E5E7EB;
+    color: #9CA3AF;
+    pointer-events: none;
+}
+
+.ta-btn.flex-1 {
+    flex: 1;
+}
+
+/* Bottom Sheet */
+.yanyuan-ta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.yanyuan-ta-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.yanyuan-ta-sheet {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 85vh;
+    background: #fff;
+    z-index: 60;
+    border-radius: 20px 20px 0 0;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.yanyuan-ta-sheet.show {
+    transform: translateY(0);
+}
+
+.yanyuan-ta-sheet-wrap {
+    display: flex;
+    flex-direction: column;
+    max-height: 85vh;
+}
+
+.yanyuan-ta-sheet-wrap.review {
+    height: 85vh;
+}
+
+.yanyuan-ta-sheet-header {
+    padding: 20px 20px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.ta-sheet-title {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.ta-sheet-close {
+    color: #9CA3AF;
+    cursor: pointer;
+}
+
+.yanyuan-ta-sheet-content {
+    padding: 16px 20px;
+    overflow-y: auto;
+    flex: 1;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+}
+
+/* ËøõÂ∫¶ÊäΩÂ±âÊ†∑Âºè */
+.ta-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #F3F4F6;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    color: #6B7280;
+}
+
+.ta-search-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+}
+
+.ta-student-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.ta-student-name {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.ta-student-time {
+    font-size: 12px;
+    color: #9CA3AF;
+}
+
+.ta-student-score {
+    width: 100px;
+    text-align: right;
+}
+
+.ta-progress {
+    height: 4px;
+    background: #E5E7EB;
+    border-radius: 2px;
+    margin-bottom: 6px;
+    overflow: hidden;
+}
+
+.ta-progress-bar {
+    height: 100%;
+    background: #10B981;
+    border-radius: 2px;
+}
+
+.ta-score-txt {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+/* ÊâπÈòÖÊäΩÂ±âÊ†∑Âºè */
+.ta-review-candidate {
+    background: #F9FAFB;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 16px;
+    color: #4B5563;
+}
+
+.ta-review-question {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #111827;
+    margin-bottom: 16px;
+    background: #EEF2FF;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.ta-review-answer {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #374151;
+    background: #F8FAFC;
+    padding: 16px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    min-height: 100px;
+}
+
+.ta-review-score-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.ta-score-control label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.ta-score-control input,
+.ta-score-control textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.ta-score-control input:focus,
+.ta-score-control textarea:focus {
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.ta-review-buttons {
+    display: flex;
+    gap: 12px;
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    padding-top: 10px;
+}
+
+/* Toast */
+.yanyuan-ta-toast {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 100;
+    animation: ta-fade 0.2s ease;
+}
+
+@keyframes ta-fade {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
