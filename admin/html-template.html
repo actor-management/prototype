@@ -14,26 +14,21 @@
 <body>
   <div id="root"></div>
 
-  <!-- 加载组件 JS（IIFE 格式，会挂载 UserComponent 到 window） -->
-  <script src="{{ENTRY}}"></script>
-
-  <script>
-    // 等待组件加载完成
-    function waitForReady() {
-      if (window.UserComponent) {
-        var UC = window.UserComponent;
-        var React = UC.React;
-        var ReactDOM = UC.ReactDOM;
-        var Component = UC.Component || UC.default;
-        
-        if (React && ReactDOM && Component) {
-          ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Component));
-          return;
-        }
-      }
-      setTimeout(waitForReady, 10);
-    }
-    waitForReady();
+  <script type="module">
+    // 导入组件模块（会自动加载 chunks 中的 React 和 ReactDOM）
+    import('{{ENTRY}}').then(module => {
+      // 模块导出的是组件本身
+      const Component = module.default || module;
+      
+      // 从 chunks 中导入 React 和 ReactDOM
+      import('/chunks/react.js').then(React => {
+        import('/chunks/react-dom.js').then(ReactDOM => {
+          ReactDOM.createRoot(document.getElementById('root')).render(
+            React.createElement(Component)
+          );
+        });
+      });
+    });
   </script>
 </body>
 

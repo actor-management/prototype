@@ -243,20 +243,14 @@ export default defineConfig(async ({ command }) => {
 
         output: {
           entryFileNames: (chunkInfo: { name: string }) => `${chunkInfo.name}.js`,
-          chunkFileNames: 'assets/chunks/[name]-[hash].js',
+          chunkFileNames: 'chunks/[name]-[hash].js',
           assetFileNames: 'assets/[name]-[hash][extname]',
-          format: isIifeBuild ? 'iife' : 'es',
+          format: 'iife',
           name: 'UserComponent',
-
-          ...(isIifeBuild
-            ? {
-              globals: {
-                react: 'React',
-                'react-dom': 'ReactDOM'
-              },
-              generatedCode: { constBindings: false }
-            }
-            : {})
+          globals: {
+            react: 'React',
+            'react-dom': 'ReactDOM'
+          }
         }
       },
 
