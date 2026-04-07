@@ -1,7 +1,7 @@
 {
   "name": "yanyuan",
   "version": "0.3.2",
-  "private": true,
+  "private": false,
   "description": "Axhub Make（AI 辅助生成原型工具）",
   "type": "module",
   "scripts": {

@@ -152,6 +152,9 @@ export default defineConfig(async ({ command }) => {
   const servePlugins = isServe ? await loadServePlugins() : [];
 
   const config: any = {
+    // GitHub Pages 部署需要设置 base
+    base: process.env.GITHUB_PAGES ? '/prototype/' : '/',
+
     plugins: [
       tailwindcss(),
       injectStablePageIds(),
