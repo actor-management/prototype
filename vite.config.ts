@@ -239,7 +239,7 @@ export default defineConfig(async ({ command }) => {
       rollupOptions: {
         input: rollupInput,
 
-        external: isIifeBuild ? ['react', 'react-dom'] : [],
+        external: isIifeBuild && !process.env.GITHUB_PAGES ? ['react', 'react-dom'] : [],
 
         output: {
           entryFileNames: (chunkInfo: { name: string }) => `${chunkInfo.name}.js`,
