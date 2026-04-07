@@ -14,21 +14,29 @@
 <body>
   <div id="root"></div>
 
-  <script type="module">
-    // 导入组件模块（会自动加载 chunks 中的 React 和 ReactDOM）
-    import('{{ENTRY}}').then(module => {
-      // 模块导出的是组件本身
-      const Component = module.default || module;
-      
-      // 从 chunks 中导入 React 和 ReactDOM
-      import('/chunks/react.js').then(React => {
-        import('/chunks/react-dom.js').then(ReactDOM => {
-          ReactDOM.createRoot(document.getElementById('root')).render(
-            React.createElement(Component)
-          );
-        });
-      });
-    });
+  <script>
+    // IIFE 格式：组件和 React 都打包在一个文件中
+    // window.UserComponent 包含 { default: Component, React, ReactDOM }
+    function renderApp() {
+      const UC = window.UserComponent;
+      if (UC && UC.React && UC.ReactDOM && (UC.default || UC.Component)) {
+        const Component = UC.default || UC.Component;
+        UC.ReactDOM.createRoot(document.getElementById('root')).render(
+          UC.React.createElement(Component)
+        );
+      } else {
+        setTimeout(renderApp, 50);
+      }
+    }
+    
+    // 加载组件脚本
+    var script = document.createElement('script');
+    script.src = '{{ENTRY}}';
+    script.onload = renderApp;
+    script.onerror = function() {
+      document.getElementById('root').innerHTML = '<pre style="padding:20px;color:red">Failed to load component</pre>';
+    };
+    document.body.appendChild(script);
   </script>
 </body>
 

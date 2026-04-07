@@ -239,18 +239,17 @@ export default defineConfig(async ({ command }) => {
       rollupOptions: {
         input: rollupInput,
 
-        external: isIifeBuild && !process.env.GITHUB_PAGES ? ['react', 'react-dom'] : [],
+        external: process.env.GITHUB_PAGES ? [] : (isIifeBuild ? ['react', 'react-dom'] : []),
 
         output: {
           entryFileNames: (chunkInfo: { name: string }) => `${chunkInfo.name}.js`,
-          chunkFileNames: 'chunks/[name]-[hash].js',
-          assetFileNames: 'assets/[name]-[hash][extname]',
           format: 'iife',
           name: 'UserComponent',
           globals: {
             react: 'React',
             'react-dom': 'ReactDOM'
-          }
+          },
+          inlineDynamicImports: true,
         }
       },
 

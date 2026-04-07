@@ -91,6 +91,14 @@ generateHtmlForDirectory(distDir);
 
 console.log(`\n完成！共生成 ${generatedCount} 个 HTML 文件。`);
 
+// 为 GitHub Pages 构建添加 React 和 ReactDOM 的导出
+if (process.env.GITHUB_PAGES) {
+  console.log('\n为 GitHub Pages 构建处理 JS 文件...');
+  
+  // 不需要修改 JS 文件，HTML 模板会处理
+  console.log('  使用 IIFE 格式，React 已打包在组件中');
+}
+
 // 生成导航首页 index.html
 const indexPath = path.join(distDir, 'index.html');
 const allHtmlFiles = [];
