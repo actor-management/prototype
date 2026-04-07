@@ -5,16 +5,23 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+.pnpm-store/
 
 # Build outputs
 dist/
+build/
 tests/
 vite-plugins/**/*.test.ts
 *.tsbuildinfo
 
+# Source maps (optional, uncomment if you don't want to commit)
+# *.map
+
 # Vite
 .vite/
 vite.config.*.timestamp-*
+# Vite deps cache
+node_modules/.vite/
 
 # Environment variables
 .env
@@ -60,6 +67,11 @@ logs/
 *.tmp
 *.temp
 .cache/
+
+# Backup files
+*.bak
+*.backup
+*_recovered.*
 
 # Coverage reports
 coverage/
@@ -115,5 +127,11 @@ temp/
 .git-versions/
 
 # Database files (keep directory structure and initial data)
-# assets/database/*.json
-# !assets/database/.gitkeep
+src/database/*.json
+!src/database/.gitkeep
+!src/database/README.md
+!src/database/orders.json
+
+# Uploaded/generated media files
+assets/media/
+!assets/media/.gitkeep
