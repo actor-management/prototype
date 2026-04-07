@@ -35,7 +35,7 @@ for (const key of entryKeys) {
   console.log(`\n==== 构建入口: ${key} ====\n`);
   const result = spawnSync('npx', ['vite', 'build'], {
     cwd: workspaceRoot,
-    env: { ...process.env, ENTRY_KEY: key },
+    env: { ...process.env, ENTRY_KEY: key, GITHUB_PAGES: process.env.GITHUB_PAGES },
     stdio: 'inherit'
   });
 
